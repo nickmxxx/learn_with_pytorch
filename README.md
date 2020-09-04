@@ -7,6 +7,12 @@
 ## 为git设置代理 使用v2ray socks5端口为10808 http端口为10809
 git config --global http.proxy socks5://127.0.0.1:10808
 git config --global https.proxy socks5://127.0.0.1:10808
+
+一定注意此处是没有引号的，网上的教程是
+git config --global http.proxy 'socks5://127.0.0.1:10808'
+git config --global https.proxy 'socks5://127.0.0.1:10808'
+此处解析出了引号'' 这使得git无法正确解析socks协议，从而找不到端口
+
 ## 查看代理
 git config --global --get http.proxy
 git config --global --get https.proxy
